@@ -1,0 +1,15 @@
+{
+    "name": "web-components-sample-website",
+    "version": "1.0.0",
+    "description": "Web Components Sample Website",
+    "main": "index.js",
+    "scripts": {
+        "scss": "node-sass --watch src/scss -o dist/css --output-style compact"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-sass": "^9.0.0"
+    }
+}
