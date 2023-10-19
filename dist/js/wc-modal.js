@@ -8,6 +8,15 @@ class Modal extends HTMLElement {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
         <style>
+            .btn {
+                background: #d4d4d4;
+                border-radius: 8px;
+                color: #000;
+                font-weight: 700;
+                text-decoration: none;
+                padding: 10px 20px;
+            }
+            
             .modal {
                 display: none;
             }
@@ -17,6 +26,7 @@ class Modal extends HTMLElement {
                 height: 100vh;
                 position: fixed;
                 top: 0;
+                left: 0;
                 width: 100vw;
             }
             
@@ -41,7 +51,7 @@ class Modal extends HTMLElement {
         <div class='modal'>
             <div class='modal__dimmer'></div>
             <div class='modal__container'>
-                <button class='modal__close'>Close</button>
+                <button class='btn modal__btn-close'>Close</button>
                 <slot><slot>
             </div>
         </div>
@@ -54,7 +64,7 @@ class Modal extends HTMLElement {
             .querySelector('.modal__btn')
             .addEventListener('click', this.showModal.bind(this));
         this.shadowRoot
-            .querySelector('.modal__close')
+            .querySelector('.modal__btn-close')
             .addEventListener('click', this.hideModal.bind(this));
         this.shadowRoot
             .querySelector('.modal__dimmer')
@@ -67,7 +77,7 @@ class Modal extends HTMLElement {
             .querySelector('.modal__btn')
             .removeEventListener('click', this.showModal.bind(this));
         this.shadowRoot
-            .querySelector('.modal__close')
+            .querySelector('.modal__btn-close')
             .removeEventListener('click', this.hideModal.bind(this));
         this.shadowRoot
             .querySelector('.modal__dimmer')
