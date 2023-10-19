@@ -7,46 +7,6 @@ class Modal extends HTMLElement {
         this.modalTitle;
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.innerHTML = `
-        <style>
-            .btn {
-                background: #d4d4d4;
-                border-radius: 8px;
-                color: #000;
-                font-weight: 700;
-                text-decoration: none;
-                padding: 10px 20px;
-            }
-            
-            .modal {
-                display: none;
-            }
-            
-            .modal__dimmer {
-                background: rgba(0, 0, 0, 0.8);
-                height: 100vh;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-            }
-            
-            .modal__container {
-                background: #fff;
-                margin: 0 auto;
-                max-width: 1000px;
-                left: 50%;
-                padding: 20px;
-                position: fixed;
-                width: 80%;
-                transform: translateX(-50%);
-                top: 10%;
-            }
-            
-            .modal__btn-close {
-                position: absolute;
-                right: 20px;
-            }
-        </style>
         <button class="modal__btn btn mb5"></button>
         <div class='modal'>
             <div class='modal__dimmer'></div>
@@ -56,6 +16,10 @@ class Modal extends HTMLElement {
             </div>
         </div>
         `;
+        let link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', 'css/global.css');
+        this.shadowRoot.appendChild(link);
     }
 
     connectedCallback() {
@@ -87,11 +51,13 @@ class Modal extends HTMLElement {
     showModal() {
         this.modalVisible = true;
         this.modal.style.display = 'block';
+        document.body.classList.toggle('overflow-hidden');
     }
 
     hideModal() {
         this.modalVisible = false;
         this.modal.style.display = 'none';
+        document.body.classList.toggle('overflow-hidden');
     }
 
     get title() {
