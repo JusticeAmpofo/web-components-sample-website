@@ -1,4 +1,3 @@
-console.log('wc-modal.js');
 class Modal extends HTMLElement {
     constructor() {
         super();
