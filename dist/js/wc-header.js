@@ -1,9 +1,6 @@
 class Header extends HTMLElement {
     constructor() {
         super();
-    }
-
-    connectedCallback() {
         const title = 'My Header';
         const navTitle = 'Main nav links:';
         const navLinks = [
@@ -79,7 +76,9 @@ class Header extends HTMLElement {
                 </div>
             </div>
         `;
+    }
 
+    connectedCallback() {
         const hamburger = this.querySelector('.hamburger');
         const navigationBlockMobile = this.querySelector(
             '.navigation-block--mobile'
