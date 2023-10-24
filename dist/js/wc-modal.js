@@ -50,13 +50,13 @@ class Modal extends HTMLElement {
     showModal() {
         this.modalVisible = true;
         this.modal.style.display = 'block';
-        document.body.classList.toggle('overflow-hidden');
+        document.body.classList.add('overflow-hidden');
     }
 
     hideModal() {
         this.modalVisible = false;
         this.modal.style.display = 'none';
-        document.body.classList.toggle('overflow-hidden');
+        document.body.classList.remove('overflow-hidden');
     }
 
     get title() {
