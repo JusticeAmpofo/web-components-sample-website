@@ -1,4 +1,3 @@
-console.log('wc-isi');
 class ISI extends HTMLElement {
     constructor() {
         super();

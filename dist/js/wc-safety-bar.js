@@ -1,4 +1,3 @@
-console.log('safety bar');
 class SafetyBar extends HTMLElement {
     constructor() {
         super();
@@ -7,7 +6,7 @@ class SafetyBar extends HTMLElement {
         this.innerHTML = `
             <div class='safety-bar container website-border'>
                 <div class='safety-bar__content'>
-                    <a href='#isi' class='btn safety__btn-isi'>+</a>
+                    <a href='#${this.targetId}' class='btn safety__btn-isi'>+</a>
                     <h2 class='h1 mb5'>IMPORTANT SAFETY INFORMATION</h2>
                     <p class='mb5'>
                         3 visible lines of copy should always be visible
