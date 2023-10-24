@@ -29,11 +29,11 @@ class SafetyBar extends HTMLElement {
 
     scrollHandler() {
         const safetyBar = document.querySelector('.safety-bar');
-        const targetSection = document.getElementById('isi');
+        const targetSection = document.getElementById(this.targetId);
 
-        // if (!targetSection) {
-        //     return;
-        // }
+        if (!targetSection) {
+            return;
+        }
 
         const rect = targetSection.getBoundingClientRect();
         const topDistance = rect.top;
@@ -41,7 +41,6 @@ class SafetyBar extends HTMLElement {
             window.innerHeight || document.documentElement.clientHeight;
 
         const distanceToBottom = viewportHeight - topDistance;
-        console.log(distanceToBottom, +this.hideOffsetFromElement);
 
         if (distanceToBottom < this.hideOffsetFromElement) {
             this.isVisible = true;
