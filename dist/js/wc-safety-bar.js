@@ -24,6 +24,16 @@ class SafetyBar extends HTMLElement {
 
     connectedCallback() {
         window.addEventListener('scroll', this.scrollHandler.bind(this));
+        document
+            .querySelector('.safety__btn-isi')
+            .addEventListener('click', () => {
+                this.dispatchEvent(
+                    new Event('safety-btn-clicked', {
+                        bubbles: true,
+                        detail: {},
+                    })
+                );
+            });
     }
 
     scrollHandler() {

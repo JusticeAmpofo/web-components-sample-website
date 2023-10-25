@@ -33,6 +33,10 @@ class Modal extends HTMLElement {
             .querySelector('.modal__dimmer')
             .addEventListener('click', this.hideModal.bind(this));
         this.shadowRoot.querySelector('.modal__btn').innerHTML = this.title;
+
+        window.addEventListener('safety-btn-clicked', () => {
+            this.hideModal();
+        });
     }
 
     disconnectedCallback() {
