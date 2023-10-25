@@ -113,3 +113,11 @@ body { font-family: 'Open Sans', sans-serif; font-size: 1.6rem; line-height: 1.2
 .safety-bar__content { position: relative; }
 
 .safety__btn-isi { position: absolute; right: 20px; }
+
+.tabs__panels { margin-bottom: -12px; margin-left: 8px; }
+
+.btn.tabs__item { background: #fff; }
+
+.btn.tabs__item--active { background: #d4d4d4; }
+
+.tabs__content { background: #fff; padding: 20px; }
